@@ -101,6 +101,7 @@ dbGetQuery( db ,
 	GROUP BY provider_gender_code" 
 )
 library(dplyr)
+library(dbplyr)
 dplyr_db <- dplyr::src_sqlite( dbdir )
 nvss_tbl <- tbl( dplyr_db , 'npi' )
 nvss_tbl %>%
