@@ -100,6 +100,26 @@ dbGetQuery( db ,
 	FROM npi 
 	GROUP BY provider_gender_code" 
 )
+nvss_three_columns_df <- 
+	dbGetQuery( db , 
+		"SELECT 
+			provider_enumeration_year , 
+			individual ,
+			is_sole_proprietor
+		FROM npi" 
+	)
+
+t.test( provider_enumeration_year ~ individual , nvss_three_columns_df )
+this_table <- table( nvss_three_columns_df[ , c( "individual" , "is_sole_proprietor" ) ] )
+
+chisq.test( this_table )
+glm_result <- 
+	glm( 
+		provider_enumeration_year ~ individual + is_sole_proprietor , 
+		data = nvss_three_columns_df
+	)
+
+summary( glm_result )
 library(dplyr)
 library(dbplyr)
 dplyr_db <- dplyr::src_sqlite( dbdir )
