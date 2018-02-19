@@ -4,7 +4,7 @@ Title: nvss
 Version: 0.1.0
 Author: Anthony Joseph Damico
 Maintainer: Anthony Joseph Damico <ajdamico@gmail.com>
-Description: A continuous integration package, tested on ajdamico/asdfree commit 1db1b53be770cd2bf37295fbd3f08014ee1e5a25 ajdamico/lodown commit 28d71759f017474853e0cb1025bbd55c44944d3a
+Description: A continuous integration package, tested on  ajdamico/lodown commit 28d71759f017474853e0cb1025bbd55c44944d3a
 License: GPL-3
 Imports: DBI, archive, lodown, dplyr, dbplyr
 Encoding: UTF-8
